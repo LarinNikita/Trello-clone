@@ -7,11 +7,11 @@ import { ListContainer } from "./_components/list-container";
 
 interface BoardIdPageProps {
     params: {
-        bordId: string;
+        boardId: string;
     };
 };
 
-const BoardPageId = async ({
+const BoardIdPage = async ({
     params
 }: BoardIdPageProps) => {
     const { orgId } = auth();
@@ -22,7 +22,7 @@ const BoardPageId = async ({
 
     const lists = await db.list.findMany({
         where: {
-            boardId: params.bordId,
+            boardId: params.boardId,
             board: {
                 orgId,
             },
@@ -42,11 +42,11 @@ const BoardPageId = async ({
     return (
         <div className="p-4 h-full overflow-x-auto">
             <ListContainer
-                bordId={params.bordId}
+                bordId={params.boardId}
                 data={lists}
             />
         </div>
     );
 }
 
-export default BoardPageId;
+export default BoardIdPage;
