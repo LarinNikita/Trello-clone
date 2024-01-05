@@ -1,5 +1,7 @@
 import { Board } from "@prisma/client";
+
 import { BoardTitleForm } from "./board-title-form";
+import { BoardOptions } from "./board-options";
 
 interface BoardNavbarProps {
     data: Board;
@@ -13,6 +15,11 @@ export const BoardNavbar = async ({
             <BoardTitleForm
                 data={data}
             />
+            <div className="ml-auto">
+                <BoardOptions
+                    id={data.id}
+                />
+            </div>
         </div>
     );
 };
