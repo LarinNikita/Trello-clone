@@ -95,7 +95,6 @@ export const ListOptions = ({
                 </PopoverClose>
                 <Button
                     onClick={onAddCard}
-                    disabled
                     className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
                     variant="ghost"
                 >
