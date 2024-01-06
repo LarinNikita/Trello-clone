@@ -11,13 +11,13 @@ import { CardForm } from "./card-form";
 import { CardItem } from "./card-item";
 
 interface ListItemProps {
-    index: number;
     data: ListWithCards;
+    index: number;
 };
 
 export const ListItem = ({
+    data,
     index,
-    data
 }: ListItemProps) => {
     const textareaRef = useRef<ElementRef<"textarea">>(null);
 
