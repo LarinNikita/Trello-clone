@@ -41,7 +41,7 @@ export const FormPicker = ({
                 }
             } catch (error) {
                 console.log(error);
-                setImages([defaultImages]);
+                setImages(defaultImages);
             } finally {
                 setIsLoading(false);
             }
