@@ -5,6 +5,7 @@ import { HelpCircle, User2 } from "lucide-react";
 
 import { db } from "@/lib/db";
 import { getAvailableCount } from "@/lib/org-limit";
+import { checkSubscription } from "@/lib/subcription";
 import { MAX_FREE_BOARDS } from "@/constants/boards";
 
 import { FormPopover } from "@/components/form/form-popover";
@@ -28,6 +29,7 @@ export const BoardList = async () => {
     });
 
     const availableCount = await getAvailableCount();
+    const isPro = await checkSubscription();
 
     return (
         <div className="space-y-4">
@@ -61,7 +63,7 @@ export const BoardList = async () => {
                             Create new board
                         </p>
                         <span className="text-xs">
-                            {`${MAX_FREE_BOARDS - availableCount} remaining`}
+                            {isPro ? "Unlimited" : `${MAX_FREE_BOARDS - availableCount} remaining`}
                         </span>
                         <Hint
                             sideOffset={40}
