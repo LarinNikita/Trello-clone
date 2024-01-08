@@ -8,7 +8,7 @@ const ActivityPage = () => {
     return (
         <div className="w-full">
             <Info />
-            <Separator />
+            <Separator className="my-2" />
             <Suspense fallback={<ActivityList.Skeleton />}>
                 <ActivityList />
             </Suspense>
